@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Install phase"
+
+  pre_build:
+    commands:
+      - echo "Pre-build phase"
+
+  build:
+    commands:
+      - echo "Build phase"
+      - cd frontend && aws codebuild start-build --buildspec buildspec.yml && cd ..
+      - cd backend && aws codebuild start-build --buildspec buildspec.yml && cd ..
+
+  post_build:
+    commands:
+      - echo "Post-build phase"
