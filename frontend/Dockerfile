@@ -1,19 +1,13 @@
-# Stage-1 & specify a name 'builder'
-FROM  node:20-alpine3.17
+FROM  node:latest
 
-# Create a directory  and go to the directory 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-# Copy the package.json file to my current directory to install the necessary dependence  
 COPY package.json .
 
-# Install the dependence
 RUN npm install
 
-# Copy other files to my current directory
 COPY . .
 
-EXPOSE 5173
+EXPOSE 3000
 
-# Run nginx in the foreground
-CMD ["npm", "run", "dev"]
+CMD ["npm", "start","--","--host","0.0.0.0"]

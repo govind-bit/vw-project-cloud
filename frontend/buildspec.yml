@@ -45,7 +45,7 @@ artifacts:
     - src/**/*
     - package.json  
     - scripts/**/*
+    - eslintrc.cjs
     - imagedefinitions.json
     - postcss.config.js
     - tailwind.config.js
-    - vite.config.js
