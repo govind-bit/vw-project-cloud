@@ -12,8 +12,8 @@ phases:
   build:
     commands:
       - echo "Build phase"
-      - cd frontend && aws codebuild start-build --vw-project-cloud frontend --buildspec buildspec.yml && cd ..
-      - cd backend && aws codebuild start-build --vw-project-cloud backend --buildspec buildspec.yml && cd ..
+      - cd frontend && aws codebuild start-build --project-name govindmajage-prj-cb --buildspec buildspec.yml && cd ..
+      - cd backend && aws codebuild start-build --project-name govindmajage-prj-cb --buildspec buildspec.yml && cd ..
 
   post_build:
     commands:
